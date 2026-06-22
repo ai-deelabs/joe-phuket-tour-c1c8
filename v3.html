@@ -1811,7 +1811,7 @@ a { text-decoration: none; color: inherit; }
 </script>
 
 <!-- Lang switcher — exact JS as specified -->
-<script>(function(){var K='site-lang',L=localStorage.getItem(K)||'th';function S(l){L=l;localStorage.setItem(K,l);document.documentElement.lang=l;document.querySelectorAll('[data-lang-th]').forEach(function(e){var t=e.getAttribute('data-lang-'+l);if(t!==null){e.textContent=t}});var lb=document.querySelector('.lang-sw__label');if(lb){lb.textContent=l.toUpperCase()}}var sw=document.querySelector('.lang-sw');if(sw){sw.addEventListener('click',function(){S(L==='th'?'en':'th')});sw.style.cursor='pointer'}if(L!=='th'){S(L)}})();</script>
+<script>(function(){var K='site-lang',L=localStorage.getItem(K)||'th';function S(l){L=l;localStorage.setItem(K,l);document.documentElement.lang=l;document.querySelectorAll('[data-lang-th]').forEach(function(e){var t=e.getAttribute('data-lang-'+l);if(t!==null){e.innerHTML=t}});document.querySelectorAll('.lang-sw__label').forEach(function(lb){lb.textContent=l.toUpperCase()})}document.querySelectorAll('.lang-sw').forEach(function(sw){sw.addEventListener('click',function(){S(L==='th'?'en':'th')});sw.style.cursor='pointer'});if(L!=='th'){S(L)}})();</script>
 <script>lucide.createIcons();</script>
 </body>
 </html>
