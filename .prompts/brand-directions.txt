@@ -1,0 +1,5 @@
+DIRECTION 1: Full-bleed cinematic hero with horizontal scroll panels, text anchored bottom-left — Condensed grotesque caps (headlines) paired with hairline italic serif (body), extreme size contrast — Deep lacquer black #0D0D0D + molten amber #E8820C + ivory silk #F5EFE0, dark-mode strategy — Slow, hypnotic; the feeling of a private yacht at dusk
+
+DIRECTION 2: Brutalist editorial grid, content bleeds edge-to-edge in irregular columns, oversized crop marks and rule lines visible — Expanded slab serif headlines reversed out, monospaced body text, zero line-height — Monochromatic ultraviolet strategy: #1A0033 + #4B00A8 + #8A2BE2 + #C084FC + #EDD9FF — Electric and disorienting; a Bangkok art-house cinema poster from 1997
+
+DIRECTION 3: Layered asymmetric hero with overlapping translucent cards, sticky vertical nav on far left, imagery masked into geometric cutouts — Didone display type (sharp thick-thin contrast) with wide-tracked small caps for labels — Unexpected pairing: bleached coral sand #F2D4C2 + abyssal teal #00565A as a muted-meets-cold strategy — Composed and quietly strange; like a Wes Anderson hotel lobby in a Kubrick color grade

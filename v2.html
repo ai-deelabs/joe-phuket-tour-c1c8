@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>โจ ภูเก็ต ทัวร์ — ประสบการณ์สุดหรู</title>
+<meta name="description" content="โจ ภูเก็ต ทัวร์ บริการทัวร์สุดหรูในภูเก็ต ประเทศไทย ค้นพบความงามของหมู่เกาะอันดามัน">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Roboto+Slab:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --uv0:#1A0033;
+  --uv1:#4B00A8;
+  --uv2:#8A2BE2;
+  --uv3:#C084FC;
+  --uv4:#EDD9FF;
+  --mono:'Space Mono',monospace;
+  --slab:'Roboto Slab','Georgia',serif;
+  --thai:'IBM Plex Sans Thai','Sukhumvit Set',sans-serif;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  background:#1A0033;
+  color:#EDD9FF;
+  font-family:var(--mono);
+  font-size:16px;
+  line-height:1.8;
+  word-break:break-word;
+  overflow-wrap:break-word;
+  overflow-x:hidden;
+}
+
+/* CROP MARKS UTILITY */
+.crop-mark{position:relative}
+.crop-mark::before,.crop-mark::after{
+  content:'';position:absolute;
+  border-color:#8A2BE2;border-style:solid;
+  width:20px;height:20px;
+  pointer-events:none;z-index:10;
+}
+.crop-mark::before{top:8px;left:8px;border-width:2px 0 0 2px}
+.crop-mark::after{bottom:8px;right:8px;border-width:0 2px 2px 0}
+
+/* RULE LINE */
+.rule{display:block;width:100%;height:2px;background:#4B00A8;margin:0}
+.rule--bright{background:#8A2BE2}
+
+/* NAVBAR */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:999;
+  background:#1A0033;
+  border-bottom:2px solid #4B00A8;
+  transition:background 0.3s,border-color 0.3s;
+}
+nav.scrolled{background:rgba(26,0,51,0.97);border-bottom-color:#8A2BE2}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 1.25rem;height:60px;max-width:1400px;margin:0 auto;
+}
+.nav-logo{
+  font-family:var(--slab);font-weight:900;font-size:1.1rem;
+  color:#EDD9FF;text-decoration:none;letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+.nav-logo span{color:#C084FC}
+.nav-links{display:none;gap:2rem;list-style:none}
+.nav-links a{
+  font-family:var(--mono);font-size:0.75rem;text-transform:uppercase;
+  letter-spacing:0.12em;color:#C084FC;text-decoration:none;
+  transition:color 0.2s;padding:0.5rem 0;
+}
+.nav-links a:hover{color:#EDD9FF}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.lang-sw{
+  display:flex;align-items:center;gap:0.35rem;
+  font-family:var(--mono);font-size:0.75rem;
+  color:#C084FC;background:none;border:1px solid #4B00A8;
+  padding:0.3rem 0.6rem;cursor:pointer;transition:all 0.2s;
+}
+.lang-sw:hover{border-color:#8A2BE2;color:#EDD9FF}
+.lang-sw svg{flex-shrink:0}
+.hamburger{
+  display:flex;flex-direction:column;gap:5px;
+  cursor:pointer;padding:6px;background:none;border:none;
+}
+.hamburger span{
+  display:block;width:22px;height:2px;background:#C084FC;
+  transition:all 0.3s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{
+  display:none;position:fixed;top:60px;left:0;width:100%;
+  background:#1A0033;border-bottom:2px solid #4B00A8;
+  z-index:998;padding:1.5rem;
+}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.mobile-menu a{
+  font-family:var(--mono);font-size:0.85rem;text-transform:uppercase;
+  letter-spacing:0.1em;color:#C084FC;text-decoration:none;
+  padding:0.75rem 0;display:block;border-bottom:1px solid #2d0060;
+}
+
+/* HERO */
+.hero{
+  min-height:100svh;position:relative;
+  display:grid;grid-template-rows:1fr;
+  overflow:hidden;padding-top:60px;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1664354297241-5979f3d9eefa?w=1400&h=900&fit=crop');
+  background-size:cover;background-position:center;
+  filter:saturate(0.3) brightness(0.35);
+  transform:scale(1.05);
+  animation:heroZoom 12s ease-out forwards;
+}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(170deg,#1A0033 0%,rgba(75,0,168,0.6) 50%,#1A0033 100%);
+}
+.hero-grid-lines{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(90deg,rgba(138,43,226,0.08) 0,rgba(138,43,226,0.08) 1px,transparent 1px,transparent 80px),
+    repeating-linear-gradient(0deg,rgba(138,43,226,0.08) 0,rgba(138,43,226,0.08) 1px,transparent 1px,transparent 80px);
+}
+.hero-content{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:2rem 1.25rem 3rem;
+  min-height:calc(100svh - 60px);
+}
+.hero-issue{
+  font-family:var(--mono);font-size:0.65rem;text-transform:uppercase;
+  letter-spacing:0.2em;color:#8A2BE2;margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.hero-issue::before{content:'';display:block;width:40px;height:1px;background:#8A2BE2}
+.hero-h1{
+  font-family:var(--slab);font-weight:900;
+  font-size:clamp(2.8rem,10vw,7.5rem);
+  line-height:1.05;
+  color:#EDD9FF;
+  text-transform:uppercase;
+  margin-bottom:0.5rem;
+  position:relative;
+}
+.hero-h1 .accent{color:#C084FC;display:block}
+.hero-h1 .stroke{
+  -webkit-text-stroke:2px #8A2BE2;
+  color:transparent;
+}
+.hero-sub{
+  font-family:var(--mono);font-size:clamp(0.7rem,2vw,0.9rem);
+  color:#C084FC;text-transform:uppercase;letter-spacing:0.15em;
+  max-width:480px;margin-bottom:2.5rem;line-height:1.9;
+}
+.hero-cta-row{display:flex;flex-direction:column;gap:1rem}
+.btn-primary{
+  display:inline-block;
+  background:#8A2BE2;color:#EDD9FF;
+  font-family:var(--mono);font-size:0.8rem;
+  text-transform:uppercase;letter-spacing:0.12em;
+  text-decoration:none;
+  padding:1.1rem 2rem;
+  border:2px solid #8A2BE2;
+  transition:all 0.3s;
+  position:relative;overflow:hidden;
+}
+.btn-primary::after{
+  content:'';position:absolute;inset:0;
+  background:#4B00A8;transform:translateX(-100%);
+  transition:transform 0.3s;z-index:-1;
+}
+.btn-primary:hover::after{transform:translateX(0)}
+.btn-primary:hover{border-color:#C084FC}
+.btn-ghost{
+  display:inline-block;
+  background:transparent;color:#C084FC;
+  font-family:var(--mono);font-size:0.8rem;
+  text-transform:uppercase;letter-spacing:0.12em;
+  text-decoration:none;
+  padding:1.1rem 2rem;
+  border:1px solid #4B00A8;
+  transition:all 0.3s;
+}
+.btn-ghost:hover{border-color:#C084FC;color:#EDD9FF}
+.hero-number{
+  position:absolute;top:4rem;right:1.25rem;
+  font-family:var(--slab);font-size:6rem;font-weight:900;
+  color:rgba(138,43,226,0.12);line-height:1;
+  pointer-events:none;user-select:none;
+}
+.hero-bottom-rule{
+  position:absolute;bottom:0;left:0;right:0;
+  height:4px;background:linear-gradient(90deg,#4B00A8,#8A2BE2,#C084FC);
+}
+
+/* MARQUEE */
+.marquee-bar{
+  background:#4B00A8;padding:0.75rem 0;
+  overflow:hidden;border-top:1px solid #8A2BE2;
+  border-bottom:1px solid #8A2BE2;
+}
+.marquee-track{
+  display:flex;gap:3rem;white-space:nowrap;
+  animation:marquee 20s linear infinite;
+}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{
+  font-family:var(--mono);font-size:0.7rem;text-transform:uppercase;
+  letter-spacing:0.15em;color:#EDD9FF;display:flex;align-items:center;gap:0.75rem;
+}
+.marquee-item i{color:#C084FC}
+
+/* SECTION BASE */
+section{padding:4rem 1.25rem;position:relative}
+
+/* EDITORIAL LABEL */
+.ed-label{
+  font-family:var(--mono);font-size:0.62rem;text-transform:uppercase;
+  letter-spacing:0.25em;color:#8A2BE2;margin-bottom:0.75rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.ed-label::before{content:'';display:block;width:24px;height:2px;background:#8A2BE2}
+.ed-num{
+  font-family:var(--slab);font-size:0.75rem;font-weight:700;
+  color:#4B00A8;margin-right:0.25rem;
+}
+
+/* ABOUT — bleeds with image offset */
+.about-section{background:#1A0033;overflow:visible}
+.about-grid{display:grid;grid-template-columns:1fr;gap:0}
+.about-img-col{position:relative;margin:0 -1.25rem;height:280px;overflow:hidden}
+.about-img-col img{width:100%;height:100%;object-fit:cover;filter:saturate(0.5) brightness(0.7)}
+.about-img-col::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(0deg,#1A0033 0%,transparent 60%);
+}
+.about-text-col{padding:2rem 0 0}
+.about-index{
+  font-family:var(--slab);font-size:4rem;font-weight:900;
+  color:#4B00A8;line-height:1;margin-bottom:1rem;
+  -webkit-text-stroke:1px #8A2BE2;color:transparent;
+}
+.section-h2{
+  font-family:var(--slab);font-weight:900;font-size:clamp(1.8rem,6vw,3.5rem);
+  color:#EDD9FF;text-transform:uppercase;line-height:1.1;margin-bottom:1.25rem;
+}
+.section-h2 em{font-style:normal;color:#C084FC}
+.body-text{
+  font-family:var(--mono);font-size:0.82rem;
+  color:#C084FC;line-height:1.9;margin-bottom:1.25rem;
+}
+.stat-row{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;margin-top:2rem;
+  border:1px solid #4B00A8;
+}
+.stat-cell{
+  padding:1rem 0.75rem;text-align:center;
+  border-right:1px solid #4B00A8;
+}
+.stat-cell:last-child{border-right:none}
+.stat-num{
+  font-family:var(--slab);font-size:1.8rem;font-weight:900;
+  color:#C084FC;display:block;
+}
+.stat-label{
+  font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;
+  letter-spacing:0.15em;color:#8A2BE2;
+}
+
+/* DIVIDER — jagged / diagonal */
+.divider-slash{
+  height:60px;
+  background:linear-gradient(170deg,#1A0033 49%,#0d0020 50%);
+  margin:0;
+}
+.divider-slash--rev{
+  background:linear-gradient(170deg,#0d0020 49%,#1A0033 50%);
+}
+
+/* TOURS */
+.tours-section{background:#0d0020;padding:4rem 0}
+.tours-header{padding:0 1.25rem 2rem}
+.tours-scroll{
+  display:flex;gap:0;overflow-x:auto;
+  scrollbar-width:thin;scrollbar-color:#4B00A8 transparent;
+  padding:0 1.25rem 1.5rem;
+  scroll-snap-type:x mandatory;
+}
+.tour-card{
+  flex:0 0 min(85vw,320px);
+  scroll-snap-align:start;
+  background:#1A0033;
+  border:1px solid #4B00A8;
+  position:relative;overflow:hidden;
+  transition:transform 0.3s,border-color 0.3s;
+}
+.tour-card:hover{transform:translateY(-4px);border-color:#8A2BE2}
+.tour-card-img{
+  height:200px;overflow:hidden;position:relative;
+}
+.tour-card-img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(0.6) brightness(0.7);
+  transition:filter 0.4s,transform 0.4s;
+}
+.tour-card:hover .tour-card-img img{filter:saturate(0.8) brightness(0.85);transform:scale(1.05)}
+.tour-card-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(0deg,#1A0033 0%,transparent 55%);
+}
+.tour-tag{
+  position:absolute;top:1rem;left:1rem;z-index:2;
+  font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;
+  letter-spacing:0.15em;background:#8A2BE2;color:#EDD9FF;
+  padding:0.3rem 0.6rem;
+}
+.tour-card-body{padding:1.25rem}
+.tour-name{
+  font-family:var(--slab);font-weight:900;font-size:1.15rem;
+  color:#EDD9FF;text-transform:uppercase;line-height:1.2;
+  margin-bottom:0.5rem;
+}
+.tour-meta{
+  font-family:var(--mono);font-size:0.65rem;
+  color:#8A2BE2;text-transform:uppercase;letter-spacing:0.1em;
+  display:flex;gap:1rem;margin-bottom:0.75rem;
+}
+.tour-meta i{color:#C084FC;vertical-align:middle}
+.tour-desc{
+  font-family:var(--mono);font-size:0.72rem;
+  color:#C084FC;line-height:1.8;margin-bottom:1rem;
+}
+.tour-price{
+  font-family:var(--slab);font-size:1.4rem;font-weight:900;
+  color:#C084FC;
+}
+.tour-price small{
+  font-family:var(--mono);font-size:0.65rem;
+  color:#8A2BE2;font-weight:400;
+}
+
+/* WHY US — vertical numbered list */
+.why-section{background:#1A0033}
+.why-list{margin-top:2rem;display:flex;flex-direction:column;gap:0}
+.why-item{
+  display:grid;grid-template-columns:64px 1fr;
+  border-top:1px solid #2d0060;
+  padding:1.5rem 0;
+  transition:background 0.2s;
+}
+.why-item:last-child{border-bottom:1px solid #2d0060}
+.why-item:hover{background:rgba(75,0,168,0.12)}
+.why-num{
+  font-family:var(--slab);font-size:2.5rem;font-weight:900;
+  color:#4B00A8;line-height:1;padding-top:0.1rem;
+}
+.why-text h3{
+  font-family:var(--slab);font-size:1rem;font-weight:700;
+  color:#EDD9FF;text-transform:uppercase;margin-bottom:0.5rem;
+  line-height:1.3;
+}
+.why-text p{
+  font-family:var(--mono);font-size:0.75rem;
+  color:#8A2BE2;line-height:1.9;
+}
+
+/* GALLERY — bleeds full width with clip */
+.gallery-section{background:#0d0020;padding:4rem 0;overflow:hidden}
+.gallery-header{padding:0 1.25rem 2rem}
+.gallery-strip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto;
+  gap:2px;
+}
+.g-cell{overflow:hidden;position:relative}
+.g-cell img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+  filter:saturate(0.5) brightness(0.65);
+  transition:filter 0.4s,transform 0.4s;
+}
+.g-cell:hover img{filter:saturate(0.9) brightness(0.85);transform:scale(1.04)}
+.g-cell--wide{grid-column:span 2}
+.g-cell--tall{grid-row:span 2}
+.g-label{
+  position:absolute;bottom:0.75rem;left:0.75rem;
+  font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;
+  letter-spacing:0.12em;color:#EDD9FF;
+  background:rgba(26,0,51,0.8);padding:0.25rem 0.5rem;
+  pointer-events:none;
+}
+
+/* PROCESS */
+.process-section{background:#1A0033}
+.process-steps{
+  margin-top:2.5rem;
+  display:flex;flex-direction:column;gap:0;
+}
+.process-step{
+  display:grid;grid-template-columns:48px 1fr;gap:1rem;
+  padding:1.5rem 0;border-bottom:1px solid #2d0060;
+  position:relative;
+}
+.process-step::before{
+  content:'';position:absolute;left:23px;top:0;bottom:0;
+  width:2px;background:#2d0060;z-index:0;
+}
+.p-dot{
+  width:48px;height:48px;
+  border:2px solid #8A2BE2;
+  background:#1A0033;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--slab);font-size:1rem;font-weight:900;
+  color:#C084FC;position:relative;z-index:1;
+  flex-shrink:0;
+}
+.p-body h4{
+  font-family:var(--slab);font-size:0.95rem;font-weight:700;
+  color:#EDD9FF;text-transform:uppercase;margin-bottom:0.4rem;
+  line-height:1.4;
+}
+.p-body p{
+  font-family:var(--mono);font-size:0.72rem;
+  color:#8A2BE2;line-height:1.9;
+}
+
+/* TESTIMONIALS */
+.testi-section{background:#0d0020;padding:4rem 1.25rem}
+.testi-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:1px;background:#4B00A8;
+  margin-top:2rem;border:1px solid #4B00A8;
+}
+.testi-card{
+  background:#0d0020;
+  padding:1.75rem;
+  transition:background 0.3s;
+}
+.testi-card:hover{background:#1A0033}
+.testi-stars{
+  display:flex;gap:3px;margin-bottom:1rem;
+}
+.testi-stars i{color:#C084FC}
+.testi-quote{
+  font-family:var(--mono);font-size:0.78rem;
+  color:#EDD9FF;line-height:1.9;margin-bottom:1.25rem;
+  border-left:3px solid #8A2BE2;padding-left:1rem;
+}
+.testi-author{
+  font-family:var(--mono);font-size:0.65rem;
+  text-transform:uppercase;letter-spacing:0.1em;color:#8A2BE2;
+}
+
+/* CONTACT */
+.contact-section{background:#1A0033;padding:4rem 1.25rem}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:3rem}
+.contact-form{display:flex;flex-direction:column;gap:0}
+.form-row{
+  display:flex;flex-direction:column;
+  border-bottom:1px solid #2d0060;
+  padding:0.5rem 0;
+}
+.form-row label{
+  font-family:var(--mono);font-size:0.62rem;text-transform:uppercase;
+  letter-spacing:0.15em;color:#8A2BE2;margin-bottom:0.4rem;
+}
+.form-row input,.form-row select,.form-row textarea{
+  background:transparent;border:none;outline:none;
+  font-family:var(--mono);font-size:0.85rem;
+  color:#EDD9FF;padding:0.5rem 0;line-height:1.8;
+  width:100%;resize:none;
+}
+.form-row input::placeholder,.form-row textarea::placeholder{color:#4B00A8}
+.form-row select option{background:#1A0033;color:#EDD9FF}
+.form-submit{
+  margin-top:2rem;
+  background:#8A2BE2;color:#EDD9FF;border:none;cursor:pointer;
+  font-family:var(--mono);font-size:0.8rem;text-transform:uppercase;
+  letter-spacing:0.12em;padding:1.1rem 2rem;
+  transition:background 0.3s,transform 0.2s;
+  width:100%;
+}
+.form-submit:hover{background:#4B00A8;transform:translateY(-2px)}
+.contact-info h3{
+  font-family:var(--slab);font-size:1.5rem;font-weight:900;
+  color:#EDD9FF;text-transform:uppercase;margin-bottom:1.5rem;
+  line-height:1.3;
+}
+.contact-detail{
+  display:flex;align-items:flex-start;gap:1rem;
+  margin-bottom:1.5rem;padding-bottom:1.5rem;
+  border-bottom:1px solid #2d0060;
+}
+.contact-detail i{color:#C084FC;flex-shrink:0;margin-top:0.2rem}
+.contact-detail span{
+  font-family:var(--mono);font-size:0.78rem;
+  color:#C084FC;line-height:1.9;
+}
+
+/* FOOTER */
+footer{
+  background:#0d0020;
+  border-top:2px solid #4B00A8;
+  padding:3rem 1.25rem 2rem;
+}
+.footer-top{
+  display:grid;grid-template-columns:1fr;
+  gap:2rem;margin-bottom:2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid #2d0060;
+}
+.footer-brand .nav-logo{display:block;margin-bottom:0.75rem}
+.footer-tagline{
+  font-family:var(--mono);font-size:0.72rem;
+  color:#8A2BE2;line-height:1.9;
+}
+.footer-links h4{
+  font-family:var(--mono);font-size:0.65rem;text-transform:uppercase;
+  letter-spacing:0.15em;color:#8A2BE2;margin-bottom:1rem;
+}
+.footer-links ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.footer-links a{
+  font-family:var(--mono);font-size:0.75rem;color:#C084FC;
+  text-decoration:none;transition:color 0.2s;
+}
+.footer-links a:hover{color:#EDD9FF}
+.footer-bottom{
+  display:flex;flex-direction:column;gap:0.5rem;
+  font-family:var(--mono);font-size:0.65rem;
+  color:#4B00A8;text-transform:uppercase;letter-spacing:0.1em;
+}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.6s ease-out,transform 0.6s ease-out}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity 0.6s ease-out,transform 0.6s ease-out}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+
+/* DESKTOP */
+@media(min-width:768px){
+  .nav-links{display:flex}
+  .hamburger{display:none}
+  section{padding:6rem 2.5rem}
+  .hero-content{padding:3rem 2.5rem 5rem}
+  .hero-cta-row{flex-direction:row}
+  .about-grid{
+    grid-template-columns:1fr 1fr;gap:0;align-items:start;
+  }
+  .about-img-col{
+    margin:0;height:500px;
+    clip-path:polygon(0 0,90% 0,100% 100%,0 100%);
+  }
+  .about-text-col{padding:3rem 0 0 3rem}
+  .stat-row{grid-template-columns:repeat(3,1fr)}
+  .tours-section{padding:6rem 0}
+  .tours-header{padding:0 2.5rem 2rem}
+  .tours-scroll{padding:0 2.5rem 2rem}
+  .tour-card{flex:0 0 340px}
+  .why-list{gap:0}
+  .why-item{grid-template-columns:80px 1fr}
+  .why-num{font-size:3.5rem}
+  .gallery-strip{
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows:260px 260px;
+  }
+  .g-cell--wide{grid-column:span 2}
+  .g-cell--tall{grid-row:span 2}
+  .gallery-header{padding:0 2.5rem 2rem}
+  .process-steps{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .process-step{border-right:1px solid #2d0060}
+  .process-step:nth-child(even){border-right:none}
+  .process-step::before{display:none}
+  .testi-grid{grid-template-columns:1fr 1fr 1fr}
+  .contact-grid{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1.5fr 1fr 1fr}
+  .footer-bottom{flex-direction:row;justify-content:space-between}
+}
+@media(min-width:1200px){
+  .hero-content{padding:3rem 4rem 6rem}
+  section{padding:7rem 4rem}
+  .tours-header{padding:0 4rem 2rem}
+  .tours-scroll{padding:0 4rem 2rem}
+  .gallery-header{padding:0 4rem 2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Joe <span>Phuket</span> Tour</a>
+    <ul class="nav-links">
+      <li><a href="#tours" data-lang-th="ทัวร์" data-lang-en="Tours">ทัวร์</a></li>
+      <li><a href="#about" data-lang-th="เกี่ยวกับเรา" data-lang-en="About">เกี่ยวกับเรา</a></li>
+      <li><a href="#gallery" data-lang-th="แกลเลอรี่" data-lang-en="Gallery">แกลเลอรี่</a></li>
+      <li><a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-sw" aria-label="Toggle language">
+        <i data-lucide="globe" width="14" height="14"></i>
+        <span class="lang-sw__label">TH</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#tours" data-lang-th="ทัวร์" data-lang-en="Tours">ทัวร์</a></li>
+    <li><a href="#about" data-lang-th="เกี่ยวกับเรา" data-lang-en="About">เกี่ยวกับเรา</a></li>
+    <li><a href="#gallery" data-lang-th="แกลเลอรี่" data-lang-en="Gallery">แกลเลอรี่</a></li>
+    <li><a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-number">02</div>
+  <div class="hero-content">
+    <div class="hero-issue">
+      <span data-lang-th="ภูเก็ต ประเทศไทย — ฉบับที่ ๒" data-lang-en="PHUKET, THAILAND — EDITION 02">ภูเก็ต ประเทศไทย — ฉบับที่ ๒</span>
+    </div>
+    <h1 class="hero-h1">
+      <span data-lang-th="สัมผัส" data-lang-en="FEEL">สัมผัส</span>
+      <em class="accent" data-lang-th="ความ" data-lang-en="THE">ความ</em>
+      <span class="stroke" data-lang-th="งดงาม" data-lang-en="WILD">งดงาม</span>
+    </h1>
+    <p class="hero-sub" data-lang-th="ทัวร์หรูระดับพรีเมียม — หมู่เกาะอันดามัน ป่าเขาตระหง่าน ชีวิตกลางคืนแห่งภูเก็ต" data-lang-en="PREMIUM LUXURY TOURS — ANDAMAN ISLANDS · JUNGLE HIGHLANDS · PHUKET NIGHTLIFE">ทัวร์หรูระดับพรีเมียม — หมู่เกาะอันดามัน ป่าเขาตระหง่าน ชีวิตกลางคืนแห่งภูเก็ต</p>
+    <div class="hero-cta-row">
+      <a href="#tours" class="btn-primary" data-lang-th="สำรวจทัวร์" data-lang-en="Explore Tours">สำรวจทัวร์</a>
+      <a href="#contact" class="btn-ghost" data-lang-th="ติดต่อเรา" data-lang-en="Contact Us">ติดต่อเรา</a>
+    </div>
+  </div>
+  <div class="hero-bottom-rule"></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-item"><i data-lucide="anchor" width="12" height="12"></i><span data-lang-th="ทัวร์เกาะส่วนตัว" data-lang-en="PRIVATE ISLAND TOURS">ทัวร์เกาะส่วนตัว</span></span>
+    <span class="marquee-item"><i data-lucide="map-pin" width="12" height="12"></i><span data-lang-th="เชียงใหม่ — ภูเก็ต" data-lang-en="CHIANG MAI — PHUKET">เชียงใหม่ — ภูเก็ต</span></span>
+    <span class="marquee-item"><i data-lucide="star" width="12" height="12"></i><span data-lang-th="รับรองคุณภาพ ๕ ดาว" data-lang-en="5-STAR CERTIFIED">รับรองคุณภาพ ๕ ดาว</span></span>
+    <span class="marquee-item"><i data-lucide="users" width="12" height="12"></i><span data-lang-th="มัคคุเทศก์ผู้เชี่ยวชาญ" data-lang-en="EXPERT LOCAL GUIDES">มัคคุเทศก์ผู้เชี่ยวชาญ</span></span>
+    <span class="marquee-item"><i data-lucide="anchor" width="12" height="12"></i><span data-lang-th="ทัวร์เกาะส่วนตัว" data-lang-en="PRIVATE ISLAND TOURS">ทัวร์เกาะส่วนตัว</span></span>
+    <span class="marquee-item"><i data-lucide="map-pin" width="12" height="12"></i><span data-lang-th="เชียงใหม่ — ภูเก็ต" data-lang-en="CHIANG MAI — PHUKET">เชียงใหม่ — ภูเก็ต</span></span>
+    <span class="marquee-item"><i data-lucide="star" width="12" height="12"></i><span data-lang-th="รับรองคุณภาพ ๕ ดาว" data-lang-en="5-STAR CERTIFIED">รับรองคุณภาพ ๕ ดาว</span></span>
+    <span class="marquee-item"><i data-lucide="users" width="12" height="12"></i><span data-lang-th="มัคคุเทศก์ผู้เชี่ยวชาญ" data-lang-en="EXPERT LOCAL GUIDES">มัคคุเทศก์ผู้เชี่ยวชาญ</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section reveal" id="about">
+  <div class="about-grid">
+    <div class="about-img-col">
+      <img src="https://images.unsplash.com/photo-1737515908920-298a379786c8?w=800&h=600&fit=crop" alt="วิวทะเลอันดามัน ภูเก็ต">
+    </div>
+    <div class="about-text-col">
+      <div class="ed-label"><span data-lang-th="เกี่ยวกับเรา" data-lang-en="About Us">เกี่ยวกับเรา</span></div>
+      <div class="about-index">JPT</div>
+      <h2 class="section-h2"><span data-lang-th="ผู้เชี่ยวชาญ" data-lang-en="MASTERS OF">ผู้เชี่ยวชาญ</span><br><em data-lang-th="แห่งอันดามัน" data-lang-en="THE ANDAMAN">แห่งอันดามัน</em></h2>
+      <p class="body-text" data-lang-th="โจ ภูเก็ต ทัวร์ ก่อตั้งโดยผู้คนท้องถิ่นที่รักในความงามของภูเก็ต เราออกแบบประสบการณ์การท่องเที่ยวที่เต็มไปด้วยความหรูหรา แต่ยังคงความเป็นธรรมชาติและแท้จริงของเกาะแห่งนี้ไว้อย่างครบครัน" data-lang-en="Joe Phuket Tour was founded by locals who fell in love with Phuket's extraordinary landscape. We craft journeys that blend five-star luxury with raw, authentic island life — experiences impossible to replicate on your own.">โจ ภูเก็ต ทัวร์ ก่อตั้งโดยผู้คนท้องถิ่นที่รักในความงามของภูเก็ต เราออกแบบประสบการณ์การท่องเที่ยวที่เต็มไปด้วยความหรูหรา แต่ยังคงความเป็นธรรมชาติและแท้จริงของเกาะแห่งนี้ไว้อย่างครบครัน</p>
+      <p class="body-text" data-lang-th="ทุกทัวร์ได้รับการวางแผนอย่างพิถีพิถัน มัคคุเทศก์ผู้เชี่ยวชาญพาคุณเข้าถึงจุดที่นักท่องเที่ยวทั่วไปไม่เคยสัมผัส" data-lang-en="Every tour is meticulously planned. Our specialist guides take you to places the average tourist never reaches — hidden coves, private beaches, secret jungle paths.">ทุกทัวร์ได้รับการวางแผนอย่างพิถีพิถัน มัคคุเทศก์ผู้เชี่ยวชาญพาคุณเข้าถึงจุดที่นักท่องเที่ยวทั่วไปไม่เคยสัมผัส</p>
+      <div class="stat-row">
+        <div class="stat-cell">
+          <span class="stat-num">12+</span>
+          <span class="stat-label" data-lang-th="ปีประสบการณ์" data-lang-en="Years Exp.">ปีประสบการณ์</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">8,400+</span>
+          <span class="stat-label" data-lang-th="นักท่องเที่ยว" data-lang-en="Guests Served">นักท่องเที่ยว</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">38</span>
+          <span class="stat-label" data-lang-th="เส้นทางทัวร์" data-lang-en="Tour Routes">เส้นทางทัวร์</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-slash"></div>
+
+<!-- TOURS -->
+<section class="tours-section" id="tours">
+  <div class="tours-header reveal">
+    <div class="ed-label"><span data-lang-th="โปรแกรมทัวร์" data-lang-en="Tour Programs">โปรแกรมทัวร์</span></div>
+    <h2 class="section-h2"><em data-lang-th="เส้นทาง" data-lang-en="SIGNATURE">เส้นทาง</em><br><span data-lang-th="ที่คัดสรร" data-lang-en="ROUTES">ที่คัดสรร</span></h2>
+  </div>
+  <div class="tours-scroll">
+    <div class="tour-card">
+      <div class="tour-card-img">
+        <span class="tour-tag" data-lang-th="ยอดนิยม" data-lang-en="BESTSELLER">ยอดนิยม</span>
+        <img src="https://images.unsplash.com/photo-1760260882174-ef2f2ef911f9?w=700&h=450&fit=crop" alt="เกาะพีพี ภูเก็ต">
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-name" data-lang-th="หมู่เกาะพีพีส่วนตัว" data-lang-en="Phi Phi Private Islands">หมู่เกาะพีพีส่วนตัว</div>
+        <div class="tour-meta">
+          <span><i data-lucide="clock" width="12" height="12"></i> <span data-lang-th="เต็มวัน" data-lang-en="FULL DAY">เต็มวัน</span></span>
+          <span><i data-lucide="users" width="12" height="12"></i> <span data-lang-th="สูงสุด 8 คน" data-lang-en="MAX 8 PAX">สูงสุด 8 คน</span></span>
+        </div>
+        <p class="tour-desc" data-lang-th="ล่องเรือสปีดโบ้ทส่วนตัวไปยังเกาะพีพีดอนและเกาะพีพีเลย์ ดำน้ำตื้น ชมหาดเมยา สัมผัสความใสสะอาดของทะเลอันดามัน" data-lang-en="Private speedboat to Phi Phi Don & Phi Phi Leh. Snorkelling, Maya Bay, crystal Andaman waters with no crowds.">ล่องเรือสปีดโบ้ทส่วนตัวไปยังเกาะพีพีดอนและเกาะพีพีเลย์ ดำน้ำตื้น ชมหาดเมยา</p>
+        <div class="tour-price">฿4,800 <small data-lang-th="/ ต่อท่าน" data-lang-en="/ per person">/ ต่อท่าน</small></div>
+      </div>
+    </div>
+    <div class="tour-card">
+      <div class="tour-card-img">
+        <span class="tour-tag" data-lang-th="ระดับพรีเมียม" data-lang-en="PREMIUM">ระดับพรีเมียม</span>
+        <img src="https://images.unsplash.com/photo-1708705261234-605b15436541?w=700&h=450&fit=crop" alt="ล่องเรือยอทช์ภูเก็ต">
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-name" data-lang-th="ล่องเรือยอทช์อันดามัน" data-lang-en="Andaman Yacht Charter">ล่องเรือยอทช์อันดามัน</div>
+        <div class="tour-meta">
+          <span><i data-lucide="clock" width="12" height="12"></i> <span data-lang-th="2 วัน 1 คืน" data-lang-en="2D / 1N">2 วัน 1 คืน</span></span>
+          <span><i data-lucide="users" width="12" height="12"></i> <span data-lang-th="สูงสุด 12 คน" data-lang-en="MAX 12 PAX">สูงสุด 12 คน</span></span>
+        </div>
+        <p class="tour-desc" data-lang-th="ล่องเรือยอทช์หรูเหนือน่านน้ำอันดามัน พักค้างคืนกลางทะเล ชมพระอาทิตย์ขึ้นที่เกาะห่างไกล พร้อมอาหารและเครื่องดื่มระดับพรีเมียม" data-lang-en="Sail a luxury yacht across the Andaman Sea, overnight under stars, private island sunrise, gourmet food and cocktails included.">ล่องเรือยอทช์หรูเหนือน่านน้ำอันดามัน พักค้างคืนกลางทะเล ชมพระอาทิตย์ขึ้นที่เกาะห่างไกล</p>
+        <div class="tour-price">฿18,500 <small data-lang-th="/ ต่อท่าน" data-lang-en="/ per person">/ ต่อท่าน</small></div>
+      </div>
+    </div>
+    <div class="tour-card">
+      <div class="tour-card-img">
+        <span class="tour-tag" data-lang-th="ธรรมชาติ" data-lang-en="ECO">ธรรมชาติ</span>
+        <img src="https://images.unsplash.com/photo-1768534630301-35f919cbc255?w=700&h=450&fit=crop" alt="ช้างในป่าภูเก็ต">
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-name" data-lang-th="ป่าช้างจรรยาบรรณ" data-lang-en="Ethical Elephant Forest">ป่าช้างจรรยาบรรณ</div>
+        <div class="tour-meta">
+          <span><i data-lucide="clock" width="12" height="12"></i> <span data-lang-th="ครึ่งวัน" data-lang-en="HALF DAY">ครึ่งวัน</span></span>
+          <span><i data-lucide="users" width="12" height="12"></i> <span data-lang-th="สูงสุด 10 คน" data-lang-en="MAX 10 PAX">สูงสุด 10 คน</span></span>
+        </div>
+        <p class="tour-desc" data-lang-th="สัมผัสประสบการณ์กับช้างในสภาพแวดล้อมธรรมชาติ โดยไม่มีการขี่ช้าง — เน้นการอนุรักษ์และให้ความเคารพต่อสัตว์" data-lang-en="Encounter elephants in natural surroundings — no riding, no chains. A conservation-led experience with expert naturalists.">สัมผัสประสบการณ์กับช้างในสภาพแวดล้อมธรรมชาติ โดยไม่มีการขี่ช้าง — เน้นการอนุรักษ์</p>
+        <div class="tour-price">฿3,200 <small data-lang-th="/ ต่อท่าน" data-lang-en="/ per person">/ ต่อท่าน</small></div>
+      </div>
+    </div>
+    <div class="tour-card">
+      <div class="tour-card-img">
+        <span class="tour-tag" data-lang-th="วัฒนธรรม" data-lang-en="CULTURE">วัฒนธรรม</span>
+        <img src="https://images.unsplash.com/photo-1551717309-88444dbe54f5?w=700&h=450&fit=crop" alt="ตลาดอาหารไทย">
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-name" data-lang-th="ตลาดกลางคืนและอาหารท้องถิ่น" data-lang-en="Night Market & Street Food">ตลาดกลางคืนและอาหารท้องถิ่น</div>
+        <div class="tour-meta">
+          <span><i data-lucide="clock" width="12" height="12"></i> <span data-lang-th="4 ชั่วโมง" data-lang-en="4 HOURS">4 ชั่วโมง</span></span>
+          <span><i data-lucide="users" width="12" height="12"></i> <span data-lang-th="สูงสุด 15 คน" data-lang-en="MAX 15 PAX">สูงสุด 15 คน</span></span>
+        </div>
+        <p class="tour-desc" data-lang-th="สำรวจตลาดกลางคืน ชิมอาหารท้องถิ่นที่คัดสรร เรียนรู้วัฒนธรรมภูเก็ตบาบา และประวัติศาสตร์ย่านเมืองเก่า" data-lang-en="Explore Phuket's night markets, taste curated local dishes, learn Peranakan culture and wander the UNESCO Old Town.">สำรวจตลาดกลางคืน ชิมอาหารท้องถิ่นที่คัดสรร เรียนรู้วัฒนธรรมภูเก็ตบาบา</p>
+        <div class="tour-price">฿1,900 <small data-lang-th="/ ต่อท่าน" data-lang-en="/ per person">/ ต่อท่าน</small></div>
+      </div>
+    </div>
+    <div class="tour-card">
+      <div class="tour-card-img">
+        <span class="tour-tag" data-lang-th="ผจญภัย" data-lang-en="ADVENTURE">ผจญภัย</span>
+        <img src="https://images.unsplash.com/photo-1761465064164-f324a681909d?w=700&h=450&fit=crop" alt="ถ้ำหินปูน อ่าวพังงา">
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-name" data-lang-th="อ่าวพังงาและถ้ำมรกต" data-lang-en="Phang Nga Bay & Emerald Cave">อ่าวพังงาและถ้ำมรกต</div>
+        <div class="tour-meta">
+          <span><i data-lucide="clock" width="12" height="12"></i> <span data-lang-th="เต็มวัน" data-lang-en="FULL DAY">เต็มวัน</span></span>
+          <span><i data-lucide="users" width="12" height="12"></i> <span data-lang-th="สูงสุด 8 คน" data-lang-en="MAX 8 PAX">สูงสุด 8 คน</span></span>
+        </div>
+        <p class="tour-desc" data-lang-th="พายเรือคายัคสำรวจถ้ำหินปูนในอ่าวพังงา ชมเกาะเจมส์บอนด์ เข้าถ้ำมรกตที่ซ่อนอยู่ในใจกลางเกาะ" data-lang-en="Kayak limestone sea caves in Phang Nga Bay, visit James Bond Island, enter the hidden Emerald Cave lagoon.">พายเรือคายัคสำรวจถ้ำหินปูนในอ่าวพังงา ชมเกาะเจมส์บอนด์ เข้าถ้ำมรกต</p>
+        <div class="tour-price">฿5,600 <small data-lang-th="/ ต่อท่าน" data-lang-en="/ per person">/ ต่อท่าน</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-slash--rev" style="height:60px;background:linear-gradient(170deg,#0d0020 49%,#1A0033 50%)"></div>
+
+<!-- WHY US -->
+<section class="why-section reveal" id="why">
+  <div class="ed-label"><span data-lang-th="เหตุผลที่ควรเลือกเรา" data-lang-en="Why Choose Us">เหตุผลที่ควรเลือกเรา</span></div>
+  <h2 class="section-h2"><span data-lang-th="ทำไมต้อง" data-lang-en="THE">ทำไมต้อง</span><br><em data-lang-th="โจ ภูเก็ต ทัวร์" data-lang-en="JPT DIFFERENCE">โจ ภูเก็ต ทัวร์</em></h2>
+  <div class="why-list">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <div class="why-text">
+        <h3 data-lang-th="มัคคุเทศก์ท้องถิ่นผู้เชี่ยวชาญ" data-lang-en="Expert Local Guides">มัคคุเทศก์ท้องถิ่นผู้เชี่ยวชาญ</h3>
+        <p data-lang-th="ทีมมัคคุเทศก์ทุกคนเกิดและเติบโตในภูเก็ต รู้จักเกาะเหมือนฝ่ามือตัวเอง ไม่ใช่แค่นำทางตามคู่มือ" data-lang-en="Every guide was born and raised in Phuket. They know the island like their own backyard — not just following a guidebook route.">ทีมมัคคุเทศก์ทุกคนเกิดและเติบโตในภูเก็ต รู้จักเกาะเหมือนฝ่ามือตัวเอง ไม่ใช่แค่นำทางตามคู่มือ</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <div class="why-text">
+        <h3 data-lang-th="กลุ่มเล็ก ประสบการณ์ใหญ่" data-lang-en="Small Groups, Big Experiences">กลุ่มเล็ก ประสบการณ์ใหญ่</h3>
+        <p data-lang-th="เราจำกัดจำนวนผู้เข้าร่วมทุกทัวร์ไม่เกิน 15 คน เพื่อให้ทุกคนได้รับความใส่ใจเป็นพิเศษและเข้าถึงสถานที่ที่กลุ่มใหญ่ไม่อาจไปได้" data-lang-en="We cap every tour at 15 people so every guest gets personal attention — and access to places mass tourism can't reach.">เราจำกัดจำนวนผู้เข้าร่วมทุกทัวร์ไม่เกิน 15 คน เพื่อให้ทุกคนได้รับความใส่ใจเป็นพิเศษ</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <div class="why-text">
+        <h3 data-lang-th="การท่องเที่ยวอย่างยั่งยืน" data-lang-en="Sustainable Tourism">การท่องเที่ยวอย่างยั่งยืน</h3>
+        <p data-lang-th="เราดำเนินธุรกิจด้วยหลักการรักษาสิ่งแวดล้อม ทำงานร่วมกับชุมชนท้องถิ่น และสนับสนุนการอนุรักษ์ระบบนิเวศทางทะเล" data-lang-en="We operate with environmental principles — partnering with local communities and actively funding marine ecosystem conservation.">เราดำเนินธุรกิจด้วยหลักการรักษาสิ่งแวดล้อม ทำงานร่วมกับชุมชนท้องถิ่น</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">04</div>
+      <div class="why-text">
+        <h3 data-lang-th="บริการ 24 ชั่วโมง" data-lang-en="24/7 Concierge Support">บริการ 24 ชั่วโมง</h3>
+        <p data-lang-th="ทีมงานพร้อมให้บริการตลอด 24 ชั่วโมง รองรับทั้งภาษาไทย อังกฤษ จีน และรัสเซีย สำหรับทุกความต้องการในการเดินทาง" data-lang-en="Our team is available 24/7 in Thai, English, Chinese and Russian — for any travel need, any hour of the day or night.">ทีมงานพร้อมให้บริการตลอด 24 ชั่วโมง รองรับทั้งภาษาไทย อังกฤษ จีน และรัสเซีย</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">05</div>
+      <div class="why-text">
+        <h3 data-lang-th="การันตีคืนเงิน" data-lang-en="Money-Back Guarantee">การันตีคืนเงิน</h3>
+        <p data-lang-th="หากสภาพอากาศไม่เอื้ออำนวยหรือเกิดสถานการณ์ไม่คาดฝัน เราคืนเงินเต็มจำนวนหรือจัดทัวร์ใหม่ให้คุณโดยไม่มีค่าใช้จ่ายเพิ่มเติม" data-lang-en="If weather or unforeseen events spoil your tour, we issue a full refund or reschedule at no extra cost — guaranteed.">หากสภาพอากาศไม่เอื้ออำนวยหรือเกิดสถานการณ์ไม่คาดฝัน เราคืนเงินเต็มจำนวนหรือจัดทัวร์ใหม่</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="gallery-header reveal">
+    <div class="ed-label"><span data-lang-th="แกลเลอรี่" data-lang-en="Gallery">แกลเลอรี่</span></div>
+    <h2 class="section-h2"><em data-lang-th="ภาพ" data-lang-en="THROUGH">ภาพ</em><br><span data-lang-th="แห่งภูเก็ต" data-lang-en="THE LENS">แห่งภูเก็ต</span></h2>
+  </div>
+  <div class="gallery-strip">
+    <div class="g-cell g-cell--tall">
+      <img src="https://images.unsplash.com/photo-1708656705549-14bcdf9b4921?w=500&h=800&fit=crop" alt="ชายหาดภูเก็ต">
+      <span class="g-label" data-lang-th="หาดกมลา" data-lang-en="Kamala Beach">หาดกมลา</span>
+    </div>
+    <div class="g-cell g-cell--wide">
+      <img src="https://images.unsplash.com/photo-1740745137884-fb7dbdd6da52?w=700&h=400&fit=crop" alt="อ่าวพังงา">
+      <span class="g-label" data-lang-th="อ่าวพังงา" data-lang-en="Phang Nga Bay">อ่าวพังงา</span>
+    </div>
+    <div class="g-cell">
+      <img src="https://images.unsplash.com/photo-1697160527165-b8c94eabcff7?w=400&h=400&fit=crop" alt="ป่าชายหาด">
+      <span class="g-label" data-lang-th="หาดลับ" data-lang-en="Secret Cove">หาดลับ</span>
+    </div>
+    <div class="g-cell">
+      <img src="https://images.unsplash.com/photo-1741232896925-8f857d401657?w=400&h=400&fit=crop" alt="ถ้ำทะเล">
+      <span class="g-label" data-lang-th="ถ้ำมรกต" data-lang-en="Emerald Cave">ถ้ำมรกต</span>
+    </div>
+    <div class="g-cell">
+      <img src="https://images.unsplash.com/photo-1737515994589-08201512dbda?w=400&h=400&fit=crop" alt="ชายหาดเขียว">
+      <span class="g-label" data-lang-th="หาดในหาน" data-lang-en="Nai Harn">หาดในหาน</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider-slash" style="background:linear-gradient(170deg,#0d0020 49%,#1A0033 50%)"></div>
+
+<!-- PROCESS -->
+<section class="process-section reveal" id="process">
+  <div class="ed-label"><span data-lang-th="วิธีการจอง" data-lang-en="How to Book">วิธีการจอง</span></div>
+  <h2 class="section-h2"><span data-lang-th="4 ขั้นตอน" data-lang-en="4 EASY">4 ขั้นตอน</span><br><em data-lang-th="สู่การเดินทาง" data-lang-en="STEPS">สู่การเดินทาง</em></h2>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="p-dot">01</div>
+      <div class="p-body">
+        <h4 data-lang-th="เลือกทัวร์ที่ชอบ" data-lang-en="Choose Your Tour">เลือกทัวร์ที่ชอบ</h4>
+        <p data-lang-th="เลือกจากโปรแกรมทัวร์ที่หลากหลาย หรือแจ้งความต้องการเพื่อให้เราออกแบบเส้นทางพิเศษเฉพาะสำหรับคุณ" data-lang-en="Browse our tours or tell us your dream trip — we'll design a custom itinerary just for you.">เลือกจากโปรแกรมทัวร์ที่หลากหลาย หรือแจ้งความต้องการเพื่อให้เราออกแบบเส้นทางพิเศษ</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="p-dot">02</div>
+      <div class="p-body">
+        <h4 data-lang-th="ติดต่อและยืนยัน" data-lang-en="Contact & Confirm">ติดต่อและยืนยัน</h4>
+        <p data-lang-th="ติดต่อผ่านแบบฟอร์ม LINE หรือโทรศัพท์ ทีมงานจะตอบกลับภายใน 2 ชั่วโมง เพื่อยืนยันวันและรายละเอียด" data-lang-en="Contact us via form, LINE or phone. We respond within 2 hours to confirm dates and details.">ติดต่อผ่านแบบฟอร์ม LINE หรือโทรศัพท์ ทีมงานจะตอบกลับภายใน 2 ชั่วโมง</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="p-dot">03</div>
+      <div class="p-body">
+        <h4 data-lang-th="ชำระเงินมัดจำ" data-lang-en="Secure Your Booking">ชำระเงินมัดจำ</h4>
+        <p data-lang-th="ชำระมัดจำ 30% ผ่านช่องทางที่สะดวก รับการยืนยันการจองพร้อมใบเสร็จและคู่มือการเดินทางทันที" data-lang-en="Pay a 30% deposit via your preferred channel — instant confirmation, receipt and travel brief sent immediately.">ชำระมัดจำ 30% ผ่านช่องทางที่สะดวก รับการยืนยันการจองพร้อมใบเสร็จ</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="p-dot">04</div>
+      <div class="p-body">
+        <h4 data-lang-th="พร้อมออกเดินทาง" data-lang-en="Enjoy Your Journey">พร้อมออกเดินทาง</h4>
+        <p data-lang-th="มัคคุเทศก์จะมารับถึงที่พัก พาคุณออกเดินทางสู่ประสบการณ์ที่ไม่มีวันลืม กับการบริการระดับ 5 ดาว" data-lang-en="Your guide picks you up from your hotel. Sit back, relax, and experience Phuket at its finest — 5-star all the way.">มัคคุเทศก์จะมารับถึงที่พัก พาคุณออกเดินทางสู่ประสบการณ์ที่ไม่มีวันลืม</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section reveal">
+  <div class="ed-label"><span data-lang-th="รีวิวจากลูกค้า" data-lang-en="Guest Reviews">รีวิวจากลูกค้า</span></div>
+  <h2 class="section-h2"><em data-lang-th="เสียง" data-lang-en="WHAT THEY">เสียง</em><br><span data-lang-th="จากผู้ร่วมเดินทาง" data-lang-en="SAID">จากผู้ร่วมเดินทาง</span></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+      </div>
+      <p class="testi-quote" data-lang-th="เส้นทางอ่าวพังงาเป็นสิ่งที่ดีที่สุดที่ฉันเคยทำในการท่องเที่ยวทั้งชีวิต มัคคุเทศก์รู้จักทุกซอกมุมของถ้ำ ทำให้รู้สึกเหมือนสำรวจดินแดนลับ" data-lang-en="The Phang Nga Bay route was the single best travel experience of my life. Our guide knew every hidden corner — it felt like genuine exploration, not tourism.">เส้นทางอ่าวพังงาเป็นสิ่งที่ดีที่สุดที่ฉันเคยทำในการท่องเที่ยวทั้งชีวิต มัคคุเทศก์รู้จักทุกซอกมุมของถ้ำ</p>
+      <div class="testi-author">Sarah K. — <span data-lang-th="ออสเตรเลีย" data-lang-en="Australia">ออสเตรเลีย</span></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+      </div>
+      <p class="testi-quote" data-lang-th="ล่องเรือยอทช์ 2 วัน 1 คืนเกินความคาดหวังทุกอย่าง อาหารอร่อยมาก วิวสวยงาม ทีมงานดูแลเอาใจใส่ตลอดเวลา คุ้มค่ามากกับราคา" data-lang-en="The overnight yacht charter exceeded every expectation. Food was incredible, views spectacular, and the crew's attention to detail was extraordinary. Worth every baht.">ล่องเรือยอทช์ 2 วัน 1 คืนเกินความคาดหวังทุกอย่าง อาหารอร่อยมาก วิวสวยงาม ทีมงานดูแลเอาใจใส่ตลอดเวลา</p>
+      <div class="testi-author">Marco V. — <span data-lang-th="อิตาลี" data-lang-en="Italy">อิตาลี</span></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+        <i data-lucide="star" width="14" height="14"></i>
+      </div>
+      <p class="testi-quote" data-lang-th="ทัวร์ช้างที่นี่ต่างจากที่อื่นมาก ไม่มีการขี่ ไม่มีห่วงโซ่ แค่ได้อยู่ใกล้ช้างในธรรมชาติ ลูกสาวฉันร้องไห้ด้วยความประทับใจ" data-lang-en="The elephant experience here is unlike anything else. No riding, no chains — just being near elephants in their natural habitat. My daughter was in tears.">ทัวร์ช้างที่นี่ต่างจากที่อื่นมาก ไม่มีการขี่ ไม่มีห่วงโซ่ แค่ได้อยู่ใกล้ช้างในธรรมชาติ</p>
+      <div class="testi-author">Priya N. — <span data-lang-th="สิงคโปร์" data-lang-en="Singapore">สิงคโปร์</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section reveal" id="contact">
+  <div class="ed-label"><span data-lang-th="ติดต่อเรา" data-lang-en="Contact Us">ติดต่อเรา</span></div>
+  <h2 class="section-h2"><span data-lang-th="จองทัวร์" data-lang-en="BOOK YOUR">จองทัวร์</span><br><em data-lang-th="ของคุณ" data-lang-en="JOURNEY">ของคุณ</em></h2>
+  <div class="contact-grid">
+    <form class="contact-form" onsubmit="return false">
+      <div class="form-row">
+        <label data-lang-th="ชื่อ-นามสกุล" data-lang-en="Full Name">ชื่อ-นามสกุล</label>
+        <input type="text" data-lang-th="" data-lang-en="" placeholder="ชื่อของคุณ / Your name" id="form-name-ph">
+      </div>
+      <div class="form-row">
+        <label data-lang-th="อีเมล" data-lang-en="Email">อีเมล</label>
+        <input type="email" placeholder="email@example.com">
+      </div>
+      <div class="form-row">
+        <label data-lang-th="โปรแกรมที่สนใจ" data-lang-en="Tour of Interest">โปรแกรมที่สนใจ</label>
+        <select>
+          <option value="" data-lang-th="เลือกโปรแกรม" data-lang-en="Select a tour">เลือกโปรแกรม</option>
+          <option data-lang-th="หมู่เกาะพีพีส่วนตัว" data-lang-en="Phi Phi Private Islands">หมู่เกาะพีพีส่วนตัว</option>
+          <option data-lang-th="ล่องเรือยอทช์อันดามัน" data-lang-en="Andaman Yacht Charter">ล่องเรือยอทช์อันดามัน</option>
+          <option data-lang-th="ป่าช้างจรรยาบรรณ" data-lang-en="Ethical Elephant Forest">ป่าช้างจรรยาบรรณ</option>
+          <option data-lang-th="อ่าวพังงาและถ้ำมรกต" data-lang-en="Phang Nga Bay & Emerald Cave">อ่าวพังงาและถ้ำมรกต</option>
+          <option data-lang-th="ทัวร์แบบกำหนดเอง" data-lang-en="Custom Tour">ทัวร์แบบกำหนดเอง</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label data-lang-th="ข้อความ / ความต้องการพิเศษ" data-lang-en="Message / Special Requests">ข้อความ / ความต้องการพิเศษ</label>
+        <textarea rows="4" placeholder="..."></textarea>
+      </div>
+      <button class="form-submit" type="submit" data-lang-th="ส่งข้อความ" data-lang-en="Send Message">ส่งข้อความ</button>
+    </form>
+    <div class="contact-info">
+      <h3 data-lang-th="ข้อมูลการติดต่อ" data-lang-en="Get in Touch">ข้อมูลการติดต่อ</h3>
+      <div class="contact-detail">
+        <i data-lucide="map-pin" width="18" height="18"></i>
+        <span data-lang-th="123 ถนนราษฎรอุทิศ ตำบลตลาดใหญ่ อำเภอเมืองภูเก็ต ภูเก็ต 83000" data-lang-en="123 Rasada Road, Talad Yai, Mueang Phuket, Phuket 83000">123 ถนนราษฎรอุทิศ ตำบลตลาดใหญ่ อำเภอเมืองภูเก็ต ภูเก็ต 83000</span>
+      </div>
+      <div class="contact-detail">
+        <i data-lucide="phone" width="18" height="18"></i>
+        <span>+66 76 123 456</span>
+      </div>
+      <div class="contact-detail">
+        <i data-lucide="mail" width="18" height="18"></i>
+        <span>hello@joephuket.tour</span>
+      </div>
+      <div class="contact-detail">
+        <i data-lucide="message-circle" width="18" height="18"></i>
+        <span>LINE: @joephuket</span>
+      </div>
+      <div class="contact-detail">
+        <i data-lucide="clock" width="18" height="18"></i>
+        <span data-lang-th="เปิดทุกวัน 07:00 – 21:00 น." data-lang-en="Open Daily 07:00 – 21:00">เปิดทุกวัน 07:00 – 21:00 น.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">Joe <span>Phuket</span> Tour</a>
+      <p class="footer-tagline" data-lang-th="สัมผัสความงามของอันดามัน<br>กับมัคคุเทศก์ท้องถิ่นผู้เชี่ยวชาญ<br>ตั้งแต่ปี 2555" data-lang-en="Experience Andaman's finest<br>with expert local guides<br>since 2012">สัมผัสความงามของอันดามัน<br>กับมัคคุเทศก์ท้องถิ่นผู้เชี่ยวชาญ<br>ตั้งแต่ปี 2555</p>
+    </div>
+    <div class="footer-links">
+      <h4 data-lang-th="ทัวร์" data-lang-en="Tours">ทัวร์</h4>
+      <ul>
+        <li><a href="#tours" data-lang-th="หมู่เกาะพีพี" data-lang-en="Phi Phi Islands">หมู่เกาะพีพี</a></li>
+        <li><a href="#tours" data-lang-th="ล่องเรือยอทช์" data-lang-en="Yacht Charter">ล่องเรือยอทช์</a></li>
+        <li><a href="#tours" data-lang-th="ป่าช้าง" data-lang-en="Elephant Forest">ป่าช้าง</a></li>
+        <li><a href="#tours" data-lang-th="อ่าวพังงา" data-lang-en="Phang Nga Bay">อ่าวพังงา</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4 data-lang-th="ข้อมูล" data-lang-en="Info">ข้อมูล</h4>
+      <ul>
+        <li><a href="#about" data-lang-th="เกี่ยวกับเรา" data-lang-en="About Us">เกี่ยวกับเรา</a></li>
+        <li><a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a></li>
+        <li><a href="#" data-lang-th="นโยบายความเป็นส่วนตัว" data-lang-en="Privacy Policy">นโยบายความเป็นส่วนตัว</a></li>
+        <li><a href="#" data-lang-th="เงื่อนไขการจอง" data-lang-en="Booking Terms">เงื่อนไขการจอง</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Joe Phuket Tour</span>
+    <span data-lang-th="ออกแบบด้วยความรัก ในภูเก็ต" data-lang-en="Crafted with love in Phuket">ออกแบบด้วยความรัก ในภูเก็ต</span>
+  </div>
+</footer>
+
+<script>
+// Hamburger
+(function(){
+  var h=document.getElementById('hamburger');
+  var m=document.getElementById('mobileMenu');
+  if(h&&m){
+    h.addEventListener('click',function(){
+      h.classList.toggle('open');
+      m.classList.toggle('open');
+    });
+    m.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        h.classList.remove('open');
+        m.classList.remove('open');
+      });
+    });
+  }
+})();
+
+// Navbar scroll
+(function(){
+  var nav=document.getElementById('navbar');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>40);
+  });
+})();
+
+// Scroll reveal
+(function(){
+  var els=document.querySelectorAll('.reveal,.reveal-left');
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+  },{threshold:0.12});
+  els.forEach(function(el){obs.observe(el)});
+})();
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var id=this.getAttribute('href');
+    if(id.length>1){
+      var t=document.querySelector(id);
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+    }
+  });
+});
+</script>
+
+<!-- LANGUAGE SWITCHER -->
+<script>(function(){var K='site-lang',L=localStorage.getItem(K)||'th';function S(l){L=l;localStorage.setItem(K,l);document.documentElement.lang=l;document.querySelectorAll('[data-lang-th]').forEach(function(e){var t=e.getAttribute('data-lang-'+l);if(t!==null){e.textContent=t}});var lb=document.querySelector('.lang-sw__label');if(lb){lb.textContent=l.toUpperCase()}}var sw=document.querySelector('.lang-sw');if(sw){sw.addEventListener('click',function(){S(L==='th'?'en':'th')});sw.style.cursor='pointer'}if(L!=='th'){S(L)}})();</script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
