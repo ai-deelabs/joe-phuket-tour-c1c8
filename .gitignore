@@ -1,3 +1,6 @@
 meta.json
 .claude-*.log
 .omc/
+
+# original logo source (large)
+assets/logo-source.png

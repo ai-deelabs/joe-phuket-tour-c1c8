@@ -92,16 +92,16 @@ p,li,.body-text{
   border-bottom:1px solid rgba(232,130,12,0.15);
 }
 .nav-logo{
-  font-family:'Barlow Condensed',sans-serif;
-  font-weight:900;
-  font-size:1.4rem;
-  text-transform:uppercase;
-  letter-spacing:0.08em;
-  color:var(--ivory);
+  display:flex;
+  align-items:center;
   text-decoration:none;
   line-height:1;
 }
-.nav-logo span{color:var(--amber)}
+.nav-logo img{
+  height:40px;
+  width:auto;
+  display:block;
+}
 .nav-links{display:none;gap:2rem;align-items:center}
 .nav-links a{
   font-family:'Barlow Condensed',sans-serif;
@@ -826,13 +826,12 @@ footer{
   margin-bottom:2.5rem;
 }
 .footer-brand{}
-.footer-logo{
-  font-family:'Barlow Condensed',sans-serif;
-  font-weight:900;font-size:1.6rem;
-  text-transform:uppercase;letter-spacing:0.08em;
-  color:var(--ivory);margin-bottom:0.8rem;
+.footer-logo{margin-bottom:1rem}
+.footer-logo img{
+  height:64px;
+  width:auto;
+  display:block;
 }
-.footer-logo span{color:var(--amber)}
 .footer-brand-desc{
   font-size:0.9rem;color:var(--ivory-dim);
   max-width:280px;line-height:1.85;
@@ -961,7 +960,7 @@ footer{
   .tours-header{padding:0 5rem 3rem}
   .tours-scroll-track{padding:0 5rem 4rem}
   .tour-scroll-hint{padding:0 5rem 3rem}
-  .nav-logo{font-size:1.5rem}
+  .nav-logo img{height:46px}
 }
 </style>
 </head>
@@ -969,7 +968,7 @@ footer{
 
 <!-- NAVBAR -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">Joe<span>.</span>Phuket</a>
+  <a href="#" class="nav-logo"><img src="assets/logo-nobg.png" alt="Joe Phuket Tour" width="600" height="329"></a>
   <ul class="nav-links">
     <li><a href="#tours" data-lang-th="ทัวร์" data-lang-en="Tours">ทัวร์</a></li>
     <li><a href="#experience" data-lang-th="ประสบการณ์" data-lang-en="Experiences">ประสบการณ์</a></li>
@@ -1446,7 +1445,7 @@ footer{
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="footer-logo">Joe<span>.</span>Phuket Tour</div>
+      <div class="footer-logo"><img src="assets/logo-nobg.png" alt="Joe Phuket Tour" width="600" height="329" loading="lazy"></div>
       <p class="footer-brand-desc body-text" data-lang-th="ทัวร์ส่วนตัวระดับหรูหราในภูเก็ต ประเทศไทย ด้วยประสบการณ์กว่า 12 ปีในการนำนักท่องเที่ยวสำรวจทะเลอันดามัน" data-lang-en="Premium private tours in Phuket, Thailand. Over 12 years guiding travellers through the Andaman Sea.">ทัวร์ส่วนตัวระดับหรูหราในภูเก็ต ประเทศไทย ด้วยประสบการณ์กว่า 12 ปีในการนำนักท่องเที่ยวสำรวจทะเลอันดามัน</p>
       <div class="footer-social">
         <a href="#" class="soc-btn" aria-label="Facebook"><i data-lucide="facebook" width="16" height="16"></i></a>
